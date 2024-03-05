@@ -1,0 +1,37 @@
+.line {
+  width: 60%;
+  top: calc(50% - 2px);
+  left: 20%;
+}
+.line, .line::before, .line::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  border-radius: 2px;
+  background-color: black;
+  transition: 0.5s linear;
+}
+.line::before {
+  width: 100%;
+  top: -8px;
+}
+.line::after {
+  width: 100%;
+  top: 8px;
+}
+
+#mobile_nav:checked + .label .line {
+  background-color: transparent;
+}
+#mobile_nav:checked + .label .line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+#mobile_nav:checked + .label .line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+#mobile_nav:checked ~ .menu {
+  max-height: 300px;
+}

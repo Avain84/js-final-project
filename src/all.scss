@@ -1,0 +1,39 @@
+// 偽元素漢堡選單
+.line{
+  width: 60%;
+  top: calc(50% - 2px);
+  left: 20%;
+  &,&::before,&::after{
+    content :'';
+    position: absolute;
+    height: 4px;
+    border-radius: 2px;
+    background-color: black;
+    transition : .5s linear;
+  }
+  &::before{
+    width: 100%;
+    top: -8px;
+  }
+  &::after{
+    width: 100%;
+    top: 8px;
+  }
+}
+#mobile_nav:checked{
+  & + .label .line{
+    background-color: transparent;
+    &::before{
+      transform: rotate(-45deg);
+      top: 0;
+    }
+    &::after{
+      transform: rotate(45deg);
+      top: 0;
+    }
+  }
+}
+
+#mobile_nav:checked ~.menu{
+  max-height : 300px;
+}
