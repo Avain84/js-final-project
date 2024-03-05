@@ -35,3 +35,7 @@
 #mobile_nav:checked ~ .menu {
   max-height: 300px;
 }
+
+.recommend-album::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=all.css.map */
