@@ -40,10 +40,16 @@ module.exports = {
       height: {
         35: "140px"
       },
+      margin: {
+        15: "60px"
+      },
       borderWidth: {
         20 : "20px",
         32 : "32px",
         40 : "40px"
+      },
+      backgroundImage: {
+        "banner": "url('./img/banner.png')"
       }
     },
     container:{
