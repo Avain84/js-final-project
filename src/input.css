@@ -19,4 +19,13 @@
   .table-border {
     @apply border-b border-gray-table-border;
   }
+  .table-check {
+    @apply text-[22px] text-purple-check;
+  }
+  .table-style {
+    @apply py-3 font-normal;
+  }
+  .table-gray {
+    @apply text-sm md:text-base text-gray-table-text;
+  }
 }
