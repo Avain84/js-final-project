@@ -14,9 +14,15 @@
     @apply block py-5 md:px-5 md:py-7 lg:px-6 lg:py-9;
   }
   .h2-text {
-    @apply text-center text-2xl md:text-3xl mb-5 md:mb-7;
+    @apply text-center text-2xl md:text-3xl mb-5 md:mb-8;
   }
   .table-border {
     @apply border-b border-gray-table-border;
+  }
+  .info-label {
+    @apply col-span-4 col-start-2 lg:col-span-4 lg:col-start-5 mb-1.5;
+  }
+  .info-input {
+    @apply mb-5 col-start-2 col-end-6 lg:col-start-5 lg:col-end-9 border border-gray-border rounded px-3 py-2;
   }
 }

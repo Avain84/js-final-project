@@ -53,7 +53,11 @@ module.exports = {
       },
       center: true,
       padding: '15px'
-    }
+    },
+    screens: {
+      'md': '768px',
+      'lg': '1140px'
+    },
   },
   plugins: [],
 }
