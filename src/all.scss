@@ -37,3 +37,24 @@
 #mobile_nav:checked ~.menu{
   max-height : 300px;
 }
+
+/* width */
+.table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* Track */
+.table-scroll::-webkit-scrollbar-track {
+  background: #DACBFF;
+}
+
+/* Handle */
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #9D7FEA;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #5434A7;
+}
