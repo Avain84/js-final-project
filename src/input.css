@@ -13,8 +13,14 @@
   .menu-link {
     @apply block py-5 md:px-5 md:py-7 lg:px-6 lg:py-9;
   }
+  .section-mb {
+    @apply mb-8 md:mb-12 lg:mb-15;
+  }
   .h2-text {
     @apply text-center text-2xl md:text-3xl mb-5 md:mb-7;
+  }
+  .h4-text {
+    @apply text-xl text-center p-2;
   }
   .table-border {
     @apply border-b border-gray-table-border;
