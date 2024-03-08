@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@layer components {
   .navbar {
     @apply bg-white h-20 md:h-28 lg:h-35 border-black border-b-20 md:border-b-32 lg:border-b-40;
   }
@@ -18,5 +18,8 @@
   }
   .table-border {
     @apply border-b border-gray-table-border;
+  }
+  .delivery-icon {
+    @apply w-12 h-12 md:w-[115px] md:h-[115px] rounded-full border-2 flex justify-center items-center;
   }
 }
