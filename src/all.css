@@ -36,6 +36,18 @@
   max-height: 300px;
 }
 
+.mobile-recommend {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.mobile-recommend > li {
+  scroll-snap-align: center;
+}
+
+.mobile-recommend::-webkit-scrollbar {
+  display: none;
+}
+
 .recommend-album::-webkit-scrollbar {
   display: none;
 }/*# sourceMappingURL=all.css.map */
