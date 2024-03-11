@@ -704,7 +704,16 @@ video {
 .table-style{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 400;
+}
+
+@media (min-width: 768px){
+  .table-style{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 .table-gray{
