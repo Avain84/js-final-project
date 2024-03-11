@@ -6,28 +6,125 @@
     <title>WOWOROOM | 首頁</title>
     <link rel="icon" href="./src/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/output.css" />
-    <link rel="stylesheet" href="./src/all.css">
-    <script src="https://kit.fontawesome.com/81060961aa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/all.css" />
+    <script
+      src="https://kit.fontawesome.com/81060961aa.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="font-noto-sans">
     <header>
       <nav class="navbar">
-        <div class="container relative h-full flex justify-between items-center">
+        <div
+          class="container relative h-full flex justify-between items-center"
+        >
           <h1>
             <a href="#" class="text-xl lg:text-2xl font-extrabold">WOWOROOM</a>
           </h1>
-          <input type="checkbox" class="hidden" id="mobile_nav">
-          <label for="mobile_nav" class="label md:hidden w-10 h-10 relative cursor-pointer">
+          <input type="checkbox" class="hidden" id="mobile_nav" />
+          <label
+            for="mobile_nav"
+            class="label md:hidden w-10 h-10 relative cursor-pointer"
+          >
             <div class="line"></div>
           </label>
-          <ul class="menu transition-all duration-700 max-h-0 md:max-h-20 lg:max-h-[100px] overflow-hidden md:flex absolute top-[60px] md:top-0 left-0 md:left-auto right-0">
-            <li class="menu-btn text-white md:text-black"><a href="#" class="menu-link">床墊優勢</a></li>
-            <li class="menu-btn text-white md:text-black"><a href="#" class="menu-link">好評推薦</a></li>
-            <li class="menu-btn text-white md:text-black"><a href="#" class="menu-link">運送方式</a></li>
-            <li class="menu-btn text-purple-text"><a href="#" class="menu-link">立即預訂</a></li>
+          <ul
+            class="menu transition-all duration-700 max-h-0 md:max-h-20 lg:max-h-[100px] overflow-hidden md:flex absolute top-[60px] md:top-0 left-0 md:left-auto right-0"
+          >
+            <li class="menu-btn text-white md:text-black">
+              <a href="#" class="menu-link">床墊優勢</a>
+            </li>
+            <li class="menu-btn text-white md:text-black">
+              <a href="#" class="menu-link">好評推薦</a>
+            </li>
+            <li class="menu-btn text-white md:text-black">
+              <a href="#" class="menu-link">運送方式</a>
+            </li>
+            <li class="menu-btn text-purple-text">
+              <a href="#" class="menu-link">立即預訂</a>
+            </li>
           </ul>
         </div>
       </nav>
     </header>
+    <section class="products">
+      <div class="container py-[28px] flex flex-col items-center md:block">
+        <select
+          name="filter"
+          class="product-filter w-[255px] bg-white text-gray-input-text border border-gray-border rounded px-3 py-2"
+        >
+          <option value="all">全部</option>
+          <option value="bed">床架</option>
+          <option value="storage">收納</option>
+          <option value="curtain">窗簾</option>
+        </select>
+        <ul class="product-album my-8 flex flex-wrap gap-[28px] justify-center">
+          <li class="product-card bed w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product1.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Antony 雙人床架／雙人加大</h3>
+            <p class="text-[20px] line-through">NT$18,000</p>
+            <p class="text-[28px]">NT$12,000</p>
+          </li>
+          <li class="product-card bed w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product2.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Louvre 雙人床架／雙人加大</h3>
+            <p class="text-[20px] line-through">NT$22,000</p>
+            <p class="text-[28px]">NT$18,000</p>
+          </li>
+          <li class="product-card bed w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product3.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Charles 雙人床架</h3>
+            <p class="text-[20px] line-through">NT$17,000</p>
+            <p class="text-[28px]">NT$15,000</p>
+          </li>
+          <li class="product-card bed w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product4.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Jodan 雙人床架／雙人加大</h3>
+            <p class="text-[20px] line-through">NT$12,000</p>
+            <p class="text-[28px]">NT$9,000</p>
+          </li>
+          <li class="product-card curtain w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product5.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Antony 遮光窗簾</h3>
+            <p class="text-[20px] line-through">NT$3,980</p>
+            <p class="text-[28px]">NT$1,200</p>
+          </li>
+          <li class="product-card bed w-[255px] relative transition">
+            <span class="badge">新品</span>
+            <img src="src/img/product6.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Louvre 單人床架</h3>
+            <p class="text-[20px] line-through">NT$5,780</p>
+            <p class="text-[28px]">NT$3,780</p>
+          </li>
+          <li class="product-card storage w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product7.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Charles 系列儲物組合</h3>
+            <p class="text-[20px] line-through">NT$12,00</p>
+            <p class="text-[28px]">NT$780</p>
+          </li>
+          <li class="product-card storage w-[255px] relative">
+            <span class="badge">新品</span>
+            <img src="src/img/product8.png" alt="product" class="h-[302px]" />
+            <button class="btn">加入購物車</button>
+            <h3 class="text-[20px] my-2">Antony 床邊桌</h3>
+            <p class="text-[20px] line-through">NT$3,200</p>
+            <p class="text-[28px]">NT$1890</p>
+          </li>
+        </ul>
+      </div>
+    </section>
   </body>
 </html>
