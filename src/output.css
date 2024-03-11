@@ -848,6 +848,14 @@ video {
   }
 }
 
+.back-table-style{
+  border-width: 1px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  font-weight: 400;
+}
+
 .absolute{
   position: absolute;
 }
@@ -897,12 +905,24 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+
 .mb-4{
   margin-bottom: 1rem;
 }
 
 .mb-8{
   margin-bottom: 2rem;
+}
+
+.mb-\[58px\]{
+  margin-bottom: 58px;
+}
+
+.mb-\[98px\]{
+  margin-bottom: 98px;
 }
 
 .ml-\[95px\]{
@@ -919,6 +939,10 @@ video {
 
 .mt-7{
   margin-top: 1.75rem;
+}
+
+.mt-\[60px\]{
+  margin-top: 60px;
 }
 
 .mt-\[9px\]{
@@ -947,6 +971,10 @@ video {
 
 .h-24{
   height: 6rem;
+}
+
+.h-28{
+  height: 7rem;
 }
 
 .h-5{
@@ -981,12 +1009,20 @@ video {
   width: 6rem;
 }
 
+.w-28{
+  width: 7rem;
+}
+
 .w-5{
   width: 1.25rem;
 }
 
 .w-60{
   width: 15rem;
+}
+
+.w-\[1110px\]{
+  width: 1110px;
 }
 
 .w-\[180px\]{
@@ -1013,12 +1049,24 @@ video {
   width: 100%;
 }
 
+.max-w-\[214px\]{
+  max-width: 214px;
+}
+
+.max-w-\[217px\]{
+  max-width: 217px;
+}
+
 .max-w-\[920px\]{
   max-width: 920px;
 }
 
 .table-fixed{
   table-layout: fixed;
+}
+
+.border-collapse{
+  border-collapse: collapse;
 }
 
 .cursor-pointer{
@@ -1094,6 +1142,14 @@ video {
   overflow: scroll;
 }
 
+.overflow-x-auto{
+  overflow-x: auto;
+}
+
+.overflow-y-hidden{
+  overflow-y: hidden;
+}
+
 .overflow-x-scroll{
   overflow-x: scroll;
 }
@@ -1129,6 +1185,16 @@ video {
   background-color: rgb(48 30 95 / var(--tw-bg-opacity));
 }
 
+.bg-red-delete{
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 64 33 / var(--tw-bg-opacity));
+}
+
+.bg-red-warning{
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 36 36 / var(--tw-bg-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1153,6 +1219,11 @@ video {
 
 .bg-no-repeat{
   background-repeat: no-repeat;
+}
+
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .px-10{
@@ -1225,6 +1296,10 @@ video {
 
 .pb-3{
   padding-bottom: 0.75rem;
+}
+
+.pb-\[108px\]{
+  padding-bottom: 108px;
 }
 
 .pl-4{
@@ -1309,6 +1384,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-blue-state{
+  --tw-text-opacity: 1;
+  color: rgb(0 103 206 / var(--tw-text-opacity));
+}
+
 .text-gray-input-text{
   --tw-text-opacity: 1;
   color: rgb(129 138 145 / var(--tw-text-opacity));
@@ -1327,6 +1407,10 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.underline{
+  text-decoration-line: underline;
 }
 
 .line-through{

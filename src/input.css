@@ -52,4 +52,7 @@
   .info-input {
     @apply mb-5 col-start-2 col-end-6 lg:col-start-5 lg:col-end-9 border border-gray-border rounded px-3 py-2;
   }
+  .back-table-style {
+    @apply py-3 pl-4 border font-normal;
+  }
 }
