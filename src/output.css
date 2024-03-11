@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 /*
 ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
@@ -755,6 +755,23 @@ video {
   }
 }
 
+.delivery-icon{
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 2px;
+}
+
+@media (min-width: 768px){
+  .delivery-icon{
+    height: 115px;
+    width: 115px;
+  }
+}
+
 .absolute{
   position: absolute;
 }
@@ -812,6 +829,10 @@ video {
 
 .mt-4{
   margin-top: 1rem;
+}
+
+.mt-\[9px\]{
+  margin-top: 9px;
 }
 
 .flex{
@@ -878,6 +899,10 @@ video {
   cursor: pointer;
 }
 
+.flex-col{
+  flex-direction: column;
+}
+
 .flex-wrap{
   flex-wrap: wrap;
 }
@@ -900,6 +925,10 @@ video {
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.gap-3{
+  gap: 0.75rem;
 }
 
 .gap-\[30px\]{
@@ -1005,6 +1034,10 @@ video {
   line-height: 2rem;
 }
 
+.text-\[8px\]{
+  font-size: 8px;
+}
+
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1072,6 +1105,14 @@ video {
     top: 0px;
   }
 
+  .md\:mb-8{
+    margin-bottom: 2rem;
+  }
+
+  .md\:mt-11{
+    margin-top: 2.75rem;
+  }
+
   .md\:mt-6{
     margin-top: 1.5rem;
   }
@@ -1100,6 +1141,10 @@ video {
     width: 58.333333%;
   }
 
+  .md\:gap-\[25px\]{
+    gap: 25px;
+  }
+
   .md\:overflow-x-scroll{
     overflow-x: scroll;
   }
@@ -1107,6 +1152,11 @@ video {
   .md\:py-16{
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .md\:py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .md\:pb-8{
@@ -1121,8 +1171,22 @@ video {
     font-size: 28px;
   }
 
+  .md\:text-\[45px\]{
+    font-size: 45px;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .md\:text-lg{
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-xl{
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
@@ -1183,3 +1247,4 @@ video {
     line-height: 45px;
   }
 }
+
