@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@layer components {
   .navbar {
     @apply bg-white h-20 md:h-28 lg:h-35 border-black border-b-20 md:border-b-32 lg:border-b-40;
   }
@@ -13,11 +13,44 @@
   .menu-link {
     @apply block py-5 md:px-5 md:py-7 lg:px-6 lg:py-9;
   }
+  .section-mb {
+    @apply mb-8 md:mb-12 lg:mb-15;
+  }
   .h2-text {
-    @apply text-center text-2xl md:text-3xl mb-5 md:mb-7;
+    @apply text-center text-2xl md:text-3xl mb-5 md:mb-8;
+  }
+  .h4-text {
+    @apply text-xl text-center p-2;
   }
   .table-border {
     @apply border-b border-gray-table-border;
+  }
+  .btn {
+    @apply border border-black bg-black text-white w-[255px] text-center py-[10px] text-[20px] hover:bg-white hover:text-black transition;
+  }
+  .badge {
+    @apply absolute text-[20px] px-6 py-2 bg-black text-white right-[-4px] top-3;
+  }
+  .table-check {
+    @apply text-[22px] text-purple-check;
+  }
+  .table-style {
+    @apply py-3 font-normal text-xs md:text-base;
+  }
+  .table-gray {
+    @apply text-sm md:text-base text-gray-table-text;
+  }
+  .recommend-card {
+    @apply w-60 h-[220px] flex-col items-center rounded-lg md:rounded-none md:flex-row md:w-[350px] md:h-[96px] bg-white flex-shrink-0 flex text-left py-4 md:p-0;
+  }
+  .delivery-icon {
+    @apply w-12 h-12 md:w-[115px] md:h-[115px] rounded-full border-2 flex justify-center items-center;
+  }
+  .info-label {
+    @apply col-span-4 col-start-2 lg:col-span-4 lg:col-start-5 mb-1.5;
+  }
+  .info-input {
+    @apply mb-5 col-start-2 col-end-6 lg:col-start-5 lg:col-end-9 border border-gray-border rounded px-3 py-2;
   }
   .back-table-style {
     @apply py-3 pl-4 border font-normal;
