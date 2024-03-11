@@ -17,7 +17,7 @@
     @apply mb-8 md:mb-12 lg:mb-15;
   }
   .h2-text {
-    @apply text-center text-2xl md:text-3xl mb-5 md:mb-7;
+    @apply text-center text-2xl md:text-3xl mb-5 md:mb-8;
   }
   .h4-text {
     @apply text-xl text-center p-2;
@@ -39,6 +39,12 @@
   }
   .delivery-icon {
     @apply w-12 h-12 md:w-[115px] md:h-[115px] rounded-full border-2 flex justify-center items-center;
+  }
+  .info-label {
+    @apply col-span-4 col-start-2 lg:col-span-4 lg:col-start-5 mb-1.5;
+  }
+  .info-input {
+    @apply mb-5 col-start-2 col-end-6 lg:col-start-5 lg:col-end-9 border border-gray-border rounded px-3 py-2;
   }
 }
 
