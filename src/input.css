@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@layer components {
   .navbar {
     @apply bg-white h-20 md:h-28 lg:h-35 border-black border-b-20 md:border-b-32 lg:border-b-40;
   }
@@ -33,5 +33,8 @@
   }
   .table-gray {
     @apply text-sm md:text-base text-gray-table-text;
+  }
+  .recommend-card {
+    @apply w-60 h-[220px] flex-col items-center rounded-lg md:rounded-none md:flex-row md:w-[350px] md:h-[96px] bg-white flex-shrink-0 flex text-left py-4 md:p-0;
   }
 }
