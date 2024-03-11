@@ -83,7 +83,9 @@
       <section class="bg-white-bg pt-12 pb-16">
         <div class="container">
           <h2 class="h2-text">家具比較</h2>
-          <table class="text-center w-full lg:w-2/3 md:text-lg lg:text-xl my-0 mx-auto">
+          <table
+            class="text-center w-full lg:w-2/3 md:text-lg lg:text-xl my-0 mx-auto"
+          >
             <thead>
               <tr class="table-border">
                 <th class="table-style"></th>
@@ -95,31 +97,43 @@
             <tbody>
               <tr class="table-border">
                 <th class="table-style text-left">可單人自行組裝</th>
-                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style">
+                  <i class="fa-solid fa-check table-check"></i>
+                </td>
                 <td class="table-style table-gray">不一定</td>
                 <td class="table-style table-gray"></td>
               </tr>
               <tr class="table-border">
                 <th class="table-style text-left">可多次重複組裝</th>
-                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style">
+                  <i class="fa-solid fa-check table-check"></i>
+                </td>
                 <td class="table-style table-gray"></td>
                 <td class="table-style table-gray"></td>
               </tr>
               <tr class="table-border">
                 <th class="table-style text-left">床墊規格彈性大</th>
-                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style">
+                  <i class="fa-solid fa-check table-check"></i>
+                </td>
                 <td class="table-style table-gray">不一定</td>
                 <td class="table-style table-gray">不一定</td>
               </tr>
               <tr class="table-border">
                 <th class="table-style text-left">材質可長久使用</th>
-                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style">
+                  <i class="fa-solid fa-check table-check"></i>
+                </td>
                 <td class="table-style table-gray"></td>
-                <td class="table-style table-gray"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style table-gray">
+                  <i class="fa-solid fa-check table-check"></i>
+                </td>
               </tr>
               <tr class="table-border">
                 <th class="table-style text-left">小客車即可搬運</th>
-                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style">
+                  <i class="fa-solid fa-check table-check"></i>
+                </td>
                 <td class="table-style table-gray"></td>
                 <td class="table-style table-gray"></td>
               </tr>
@@ -180,7 +194,9 @@
                   alt="product photo"
                   class="w-24 h-24 rounded-full"
                 />
-                <p class="text-xs text-purple-text mt-2">Charles 系列儲物組合</p>
+                <p class="text-xs text-purple-text mt-2">
+                  Charles 系列儲物組合
+                </p>
                 <span class="w-[180px] border-b border-gray-border my-1"></span>
                 <p>廚房必備美用品！</p>
                 <div class="px-4 py-3 self-end">
@@ -553,7 +569,7 @@
             </ul>
           </div>
         </div>
-      </section>  
+      </section>
       <section class="delivery py-4 md:py-8 text-center">
         <div class="container">
           <h2 class="text-lg md:text-[28px] mb-4 md:mb-8">運送方式</h2>
@@ -598,10 +614,93 @@
           </ul>
         </div>
       </section>
+      <section class="products">
+        <div class="container py-[28px] flex flex-col items-center md:block">
+          <select
+            name="filter"
+            class="product-filter w-[255px] bg-white text-gray-input-text border border-gray-border rounded px-3 py-2"
+          >
+            <option value="all">全部</option>
+            <option value="bed">床架</option>
+            <option value="storage">收納</option>
+            <option value="curtain">窗簾</option>
+          </select>
+          <ul
+            class="product-album my-8 flex flex-wrap gap-[28px] justify-center"
+          >
+            <li class="product-card bed w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product1.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Antony 雙人床架／雙人加大</h3>
+              <p class="text-[20px] line-through">NT$18,000</p>
+              <p class="text-[28px]">NT$12,000</p>
+            </li>
+            <li class="product-card bed w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product2.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Louvre 雙人床架／雙人加大</h3>
+              <p class="text-[20px] line-through">NT$22,000</p>
+              <p class="text-[28px]">NT$18,000</p>
+            </li>
+            <li class="product-card bed w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product3.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Charles 雙人床架</h3>
+              <p class="text-[20px] line-through">NT$17,000</p>
+              <p class="text-[28px]">NT$15,000</p>
+            </li>
+            <li class="product-card bed w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product4.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Jodan 雙人床架／雙人加大</h3>
+              <p class="text-[20px] line-through">NT$12,000</p>
+              <p class="text-[28px]">NT$9,000</p>
+            </li>
+            <li class="product-card curtain w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product5.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Antony 遮光窗簾</h3>
+              <p class="text-[20px] line-through">NT$3,980</p>
+              <p class="text-[28px]">NT$1,200</p>
+            </li>
+            <li class="product-card bed w-[255px] relative transition">
+              <span class="badge">新品</span>
+              <img src="src/img/product6.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Louvre 單人床架</h3>
+              <p class="text-[20px] line-through">NT$5,780</p>
+              <p class="text-[28px]">NT$3,780</p>
+            </li>
+            <li class="product-card storage w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product7.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Charles 系列儲物組合</h3>
+              <p class="text-[20px] line-through">NT$12,00</p>
+              <p class="text-[28px]">NT$780</p>
+            </li>
+            <li class="product-card storage w-[255px] relative">
+              <span class="badge">新品</span>
+              <img src="src/img/product8.png" alt="product" class="h-[302px]" />
+              <button class="btn">加入購物車</button>
+              <h3 class="text-[20px] my-2">Antony 床邊桌</h3>
+              <p class="text-[20px] line-through">NT$3,200</p>
+              <p class="text-[28px]">NT$1890</p>
+            </li>
+          </ul>
+        </div>
+      </section>
       <section>
         <div class="container pt-[60px] pb-20">
           <h2 class="h2-text">填寫預訂資料</h2>
-          <form class="grid gap-x-4 grid-cols-6 lg:gap-x-[30px] lg:grid-cols-12">
+          <form
+            class="grid gap-x-4 grid-cols-6 lg:gap-x-[30px] lg:grid-cols-12"
+          >
             <label for="name" class="info-label">姓名</label>
             <input
               type="text"
@@ -642,7 +741,9 @@
             </select>
           </form>
           <div class="mx-auto mt-7 flex justify-center">
-            <button class="text-white text-lg md:text-xl py-2.5 px-10 md:px-[68px] rounded bg-black hover:bg-purple-bg">
+            <button
+              class="text-white text-lg md:text-xl py-2.5 px-10 md:px-[68px] rounded bg-black hover:bg-purple-bg"
+            >
               送出預訂資料
             </button>
           </div>

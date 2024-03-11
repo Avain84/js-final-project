@@ -25,6 +25,12 @@
   .table-border {
     @apply border-b border-gray-table-border;
   }
+  .btn {
+    @apply border border-black bg-black text-white w-[255px] text-center py-[10px] text-[20px] hover:bg-white hover:text-black transition;
+  }
+  .badge {
+    @apply absolute text-[20px] px-6 py-2 bg-black text-white right-[-4px] top-3;
+  }
   .table-check {
     @apply text-[22px] text-purple-check;
   }
@@ -47,4 +53,3 @@
     @apply mb-5 col-start-2 col-end-6 lg:col-start-5 lg:col-end-9 border border-gray-border rounded px-3 py-2;
   }
 }
-
