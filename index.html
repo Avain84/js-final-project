@@ -28,16 +28,16 @@
             class="menu transition-all duration-700 max-h-0 md:max-h-20 lg:max-h-[100px] overflow-hidden md:flex absolute top-[60px] md:top-0 left-0 md:left-auto right-0"
           >
             <li class="menu-btn text-white md:text-black">
-              <a href="#" class="menu-link">床墊優勢</a>
+              <a href="#advantage" class="menu-link">床墊優勢</a>
             </li>
             <li class="menu-btn text-white md:text-black">
-              <a href="#" class="menu-link">好評推薦</a>
+              <a href="#recommed" class="menu-link">好評推薦</a>
             </li>
             <li class="menu-btn text-white md:text-black">
-              <a href="#" class="menu-link">運送方式</a>
+              <a href="#delivery" class="menu-link">運送方式</a>
             </li>
             <li class="menu-btn text-purple-text">
-              <a href="#" class="menu-link">立即預訂</a>
+              <a href="#order" class="menu-link">立即預訂</a>
             </li>
           </ul>
         </div>
@@ -57,7 +57,7 @@
           </div>
         </div>
       </section>
-      <section class="section-mb">
+      <section class="section-mb" id="advantage">
         <div class="container">
           <h2 class="h2-text">床墊優勢</h2>
           <ul class="flex gap-[30px] flex-wrap lg:flex-nowrap justify-center">
@@ -84,7 +84,7 @@
         <div class="container">
           <h2 class="h2-text">家具比較</h2>
           <table
-            class="text-center w-full lg:w-2/3 md:text-lg lg:text-xl my-0 mx-auto"
+            class="text-center w-full lg:w-2/3 my-0 mx-auto"
           >
             <thead>
               <tr class="table-border">
@@ -141,9 +141,9 @@
           </table>
         </div>
       </section>
-      <section class="recommend bg-purple-bg py-4 md:py-16">
+      <section class="recommend bg-purple-bg py-4 md:py-16" id="recommed">
         <div class="container text-center">
-          <h2 class="text-lg md:text-[28px] text-white mb-8">好評推薦</h2>
+          <h2 class="h2-text text-white">好評推薦</h2>
           <div class="recommend-album md:overflow-x-scroll">
             <ul
               class="mobile-recommend flex md:hidden w-60 gap-[30px] mb-4 mx-auto overflow-x-scroll"
@@ -570,9 +570,9 @@
           </div>
         </div>
       </section>
-      <section class="delivery py-4 md:py-8 text-center">
+      <section class="delivery py-4 md:py-8 text-center" id="delivery">
         <div class="container">
-          <h2 class="text-lg md:text-[28px] mb-4 md:mb-8">運送方式</h2>
+          <h2 class="h2-text">運送方式</h2>
           <ul class="flex justify-center gap-3 md:gap-[25px]">
             <li class="flex flex-col items-center">
               <div class="delivery-icon">
@@ -729,8 +729,8 @@
       </section>
       <section class="cart bg-white-bg">
         <div class="container text-center py-12">
-          <h2 class="text-[28px] mb-8">我的購物車</h2>
-          <div class="max-w-[920px] overflow-scroll mx-auto">
+          <h2 class="h2-text">我的購物車</h2>
+          <div class="max-w-[920px] overflow-x-auto overflow-y-hidden mx-auto">
             <table
               class="w-[920px] cart text-left text-base md:text-xl table-fixed"
             >
@@ -800,7 +800,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="order">
         <div class="container pt-[60px] pb-20">
           <h2 class="h2-text">填寫預訂資料</h2>
           <form

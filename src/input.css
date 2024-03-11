@@ -35,7 +35,7 @@
     @apply text-[22px] text-purple-check;
   }
   .table-style {
-    @apply py-3 font-normal text-xs md:text-base;
+    @apply py-3 font-normal text-xs md:text-lg lg:text-xl;
   }
   .table-gray {
     @apply text-sm md:text-base text-gray-table-text;
