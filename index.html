@@ -7,10 +7,6 @@
     <link rel="icon" href="./src/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/output.css" />
     <link rel="stylesheet" href="./src/all.css" />
-    <script
-      src="https://kit.fontawesome.com/81060961aa.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body class="font-noto-sans">
     <header>
@@ -47,55 +43,615 @@
         </div>
       </nav>
     </header>
-    <section>
-      <div class="container pt-[60px] pb-20">
-        <h2 class="h2-text">填寫預訂資料</h2>
-        <form class="grid gap-x-4 grid-cols-6 lg:gap-x-[30px] lg:grid-cols-12">
-          <label for="name" class="info-label">姓名</label>
-          <input
-            type="text"
-            name=""
-            placeholder="請輸入姓名"
-            id="name"
-            class="info-input"
-          />
-          <label for="phone" class="info-label">電話</label>
-          <input
-            type="tel"
-            name=""
-            placeholder="請輸入電話"
-            id="phone"
-            class="info-input"
-          />
-          <label for="mail" class="info-label">Email</label>
-          <input
-            type="email"
-            name=""
-            placeholder="請輸入 Email"
-            id="mail"
-            class="info-input"
-          />
-          <label for="address" class="info-label">寄送地址</label>
-          <input
-            type="text"
-            name=""
-            placeholder="請輸入寄送地址"
-            id="address"
-            class="info-input"
-          />
-          <label for="pay" class="info-label">交易方式</label>
-          <select name="" id="pay" class="info-input">
-            <option value="ATM" selected>ATM</option>
-            <option value="信用卡">信用卡</option>
-            <option value="超商付款">超商付款</option>
-          </select>
-        </form>
-        <div class="mx-auto mt-7 flex justify-center">
-          <button class="text-white text-lg md:text-xl py-2.5 px-10 md:px-[68px] rounded bg-black hover:bg-purple-bg">
-            送出預訂資料
-          </button>
+    <main>
+      <section class="banner mt-4 md:mt-6 lg:mt-8 section-mb">
+        <div class="container h-60 md:h-80 lg:h-[420px]">
+          <div
+            class="h-full pl-4 pb-3 md:pl-9 md:pb-8 lg:pl-[52px] lg:pb-12 flex items-end bg-banner bg-center bg-cover bg-no-repeat"
+          >
+            <h3
+              class="text-white text-2xl leading-9 lg:text-[32px] lg:leading-[45px]"
+            >
+              窩窩家居<br />跟您一起品味生活
+            </h3>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="section-mb">
+        <div class="container">
+          <h2 class="h2-text">床墊優勢</h2>
+          <ul class="flex gap-[30px] flex-wrap lg:flex-nowrap justify-center">
+            <li class="w-full md:w-7/12 lg:w-full">
+              <img
+                class="w-full"
+                src="./src/img/log-friendly.png"
+                alt="log-friendly"
+              />
+              <h4 class="h4-text">原木料環保</h4>
+            </li>
+            <li class="w-full md:w-5/12 lg:w-full">
+              <img class="w-full" src="./src/img/storage.png" alt="storage" />
+              <h4 class="h4-text">好收納</h4>
+            </li>
+            <li class="w-full md:w-5/12 lg:w-full">
+              <img class="w-full" src="./src/img/build-up.png" alt="build-up" />
+              <h4 class="h4-text">好組裝</h4>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="bg-white-bg pt-12 pb-16">
+        <div class="container">
+          <h2 class="h2-text">家具比較</h2>
+          <table class="text-center w-full lg:w-2/3 md:text-lg lg:text-xl my-0 mx-auto">
+            <thead>
+              <tr class="table-border">
+                <th class="table-style"></th>
+                <th class="table-style">窩窩系統模組家具</th>
+                <th class="table-style text-gray-table-text">組合式家具</th>
+                <th class="table-style text-gray-table-text">實木家具</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-border">
+                <th class="table-style text-left">可單人自行組裝</th>
+                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style table-gray">不一定</td>
+                <td class="table-style table-gray"></td>
+              </tr>
+              <tr class="table-border">
+                <th class="table-style text-left">可多次重複組裝</th>
+                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style table-gray"></td>
+                <td class="table-style table-gray"></td>
+              </tr>
+              <tr class="table-border">
+                <th class="table-style text-left">床墊規格彈性大</th>
+                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style table-gray">不一定</td>
+                <td class="table-style table-gray">不一定</td>
+              </tr>
+              <tr class="table-border">
+                <th class="table-style text-left">材質可長久使用</th>
+                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style table-gray"></td>
+                <td class="table-style table-gray"><i class="fa-solid fa-check table-check"></i></td>
+              </tr>
+              <tr class="table-border">
+                <th class="table-style text-left">小客車即可搬運</th>
+                <td class="table-style"><i class="fa-solid fa-check table-check"></i></td>
+                <td class="table-style table-gray"></td>
+                <td class="table-style table-gray"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="recommend bg-purple-bg py-4 md:py-16">
+        <div class="container text-center">
+          <h2 class="text-lg md:text-[28px] text-white mb-8">好評推薦</h2>
+          <div class="recommend-album md:overflow-x-scroll">
+            <ul
+              class="mobile-recommend flex md:hidden w-60 gap-[30px] mb-4 mx-auto overflow-x-scroll"
+            >
+              <li class="recommend-card">
+                <img
+                  src="src/img/product1.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Jodan 雙人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>CP值很高。</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar1.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">王六角</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product2.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Antony 雙人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>很喜歡～還有送三年保固～</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar2.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">Leaf</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product3.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Charles 系列儲物組合</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>廚房必備美用品！</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar3.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">美濃鄧子琪</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product4.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Antony 遮光窗簾</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>物超所值！</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar4.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">isRaynotArray</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product5.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Louvre 雙人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>租屋用剛剛好</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar5.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">程鮭魚</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product6.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Jodan 雙人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>CP值很高。</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar6.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">小杰</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product7.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Charles 雙人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>品質不錯～</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar7.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">江八角</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product8.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Antony 床邊桌</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>讚ㄉ！</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar8.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">juni讚神</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product9.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Antony 單人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>一個躺剛剛好。</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar9.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">久安說安安</h3>
+                  </div>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product10.png"
+                  alt="product photo"
+                  class="w-24 h-24 rounded-full"
+                />
+                <p class="text-xs text-purple-text mt-2">Antony 雙人床架</p>
+                <span class="w-[180px] border-b border-gray-border my-1"></span>
+                <p>C睡起來很舒適</p>
+                <div class="px-4 py-3 self-end">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar10.png"
+                      alt="user photo"
+                      class="w-5 h-5"
+                    />
+                    <h3 class="text-sm">PeiQun</h3>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="hidden md:flex gap-[30px] ml-[95px] mb-8">
+              <li class="recommend-card">
+                <img
+                  src="src/img/product1.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar1.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">王六角</li>
+                      <li class="text-sm text-purple-text">Jodan 雙人床架</li>
+                    </ul>
+                  </div>
+                  <p>CP值很高。</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product2.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar2.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">Leaf</li>
+                      <li class="text-sm text-purple-text">Antony 雙人床架</li>
+                    </ul>
+                  </div>
+                  <p>很喜歡～還有送三年保固～</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product3.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar3.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">美濃鄧子琪</li>
+                      <li class="text-sm text-purple-text">
+                        Charles 系列儲物組合
+                      </li>
+                    </ul>
+                  </div>
+                  <p>廚房必備美用品！</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product4.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar4.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">isRaynotArray</li>
+                      <li class="text-sm text-purple-text">Antony 遮光窗簾</li>
+                    </ul>
+                  </div>
+                  <p>物超所值！</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product5.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar5.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">程鮭魚</li>
+                      <li class="text-sm text-purple-text">Louvre 雙人床架</li>
+                    </ul>
+                  </div>
+                  <p>租屋用剛剛好</p>
+                </div>
+              </li>
+            </ul>
+            <ul class="hidden md:flex gap-[30px]">
+              <li class="recommend-card">
+                <img
+                  src="src/img/product6.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar6.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">小杰</li>
+                      <li class="text-sm text-purple-text">Jodan 雙人床架</li>
+                    </ul>
+                  </div>
+                  <p>CP值很高。</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product7.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar7.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">江八角</li>
+                      <li class="text-sm text-purple-text">Charles 雙人床架</li>
+                    </ul>
+                  </div>
+                  <p>品質不錯～</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product8.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar8.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">juni讚神</li>
+                      <li class="text-sm text-purple-text">Antony 床邊桌</li>
+                    </ul>
+                  </div>
+                  <p>讚ㄉ！</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product9.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar9.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">久安說安安</li>
+                      <li class="text-sm text-purple-text">Antony 單人床架</li>
+                    </ul>
+                  </div>
+                  <p>一個躺剛剛好。</p>
+                </div>
+              </li>
+              <li class="recommend-card">
+                <img
+                  src="src/img/product10.png"
+                  alt="product photo"
+                  class="w-24 h-24"
+                />
+                <div class="px-4 py-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="src/img/user-avatar10.png"
+                      alt="user photo"
+                      class="w-10 h-10"
+                    />
+                    <ul>
+                      <li class="text-base">PeiQun</li>
+                      <li class="text-sm text-purple-text">Antony 雙人床架</li>
+                    </ul>
+                  </div>
+                  <p>睡起來很舒適</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>  
+      <section class="delivery py-4 md:py-8 text-center">
+        <div class="container">
+          <h2 class="text-lg md:text-[28px] mb-4 md:mb-8">運送方式</h2>
+          <ul class="flex justify-center gap-3 md:gap-[25px]">
+            <li class="flex flex-col items-center">
+              <div class="delivery-icon">
+                <i class="fa-solid fa-cart-shopping md:text-[45px]"></i>
+              </div>
+              <h3 class="text-xs md:text-xl mt-2">STEP.1</h3>
+              <p class="text-[8px] md:text-base">選購商品</p>
+            </li>
+            <li class="mt-[9px] md:mt-11">
+              <i class="fa-solid fa-caret-right md:text-xl"></i>
+            </li>
+            <li class="flex flex-col items-center">
+              <div class="delivery-icon">
+                <i class="fa-solid fa-list-ul md:text-[45px]"></i>
+              </div>
+              <h3 class="text-xs md:text-xl mt-2">STEP.2</h3>
+              <p class="text-[8px] md:text-base">填寫預定資料</p>
+            </li>
+            <li class="mt-[9px] md:mt-11">
+              <i class="fa-solid fa-caret-right md:text-xl"></i>
+            </li>
+            <li class="flex flex-col items-center">
+              <div class="delivery-icon">
+                <i class="fa-solid fa-check md:text-[45px]"></i>
+              </div>
+              <h3 class="text-xs md:text-xl mt-2">STEP.3</h3>
+              <p class="text-[8px] md:text-base">預定成功</p>
+            </li>
+            <li class="mt-[9px] md:mt-11">
+              <i class="fa-solid fa-caret-right md:text-xl"></i>
+            </li>
+            <li class="flex flex-col items-center">
+              <div class="delivery-icon">
+                <i class="fa-solid fa-envelope md:text-[45px]"></i>
+              </div>
+              <h3 class="text-xs md:text-xl mt-2">STEP.4</h3>
+              <p class="text-[8px] md:text-base">Email 付款資訊</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="container pt-[60px] pb-20">
+          <h2 class="h2-text">填寫預訂資料</h2>
+          <form class="grid gap-x-4 grid-cols-6 lg:gap-x-[30px] lg:grid-cols-12">
+            <label for="name" class="info-label">姓名</label>
+            <input
+              type="text"
+              name=""
+              placeholder="請輸入姓名"
+              id="name"
+              class="info-input"
+            />
+            <label for="phone" class="info-label">電話</label>
+            <input
+              type="tel"
+              name=""
+              placeholder="請輸入電話"
+              id="phone"
+              class="info-input"
+            />
+            <label for="mail" class="info-label">Email</label>
+            <input
+              type="email"
+              name=""
+              placeholder="請輸入 Email"
+              id="mail"
+              class="info-input"
+            />
+            <label for="address" class="info-label">寄送地址</label>
+            <input
+              type="text"
+              name=""
+              placeholder="請輸入寄送地址"
+              id="address"
+              class="info-input"
+            />
+            <label for="pay" class="info-label">交易方式</label>
+            <select name="" id="pay" class="info-input">
+              <option value="ATM" selected>ATM</option>
+              <option value="信用卡">信用卡</option>
+              <option value="超商付款">超商付款</option>
+            </select>
+          </form>
+          <div class="mx-auto mt-7 flex justify-center">
+            <button class="text-white text-lg md:text-xl py-2.5 px-10 md:px-[68px] rounded bg-black hover:bg-purple-bg">
+              送出預訂資料
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
+  <script
+    src="https://kit.fontawesome.com/933724d88b.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
