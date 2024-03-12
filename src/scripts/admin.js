@@ -26,11 +26,13 @@ const config = {
 };
 const getOrderUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
 const changePaidUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
+const clearOrdersUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
 
 // DOM
 const admin = document.querySelector('.admin');
 const main = document.querySelector('main');
 const tbody = document.querySelector('tbody');
+const clearAll = document.querySelector('.self-end');
 
 // variable
 let adminData;
@@ -137,4 +139,15 @@ tbody.addEventListener('click', (e) => {
         alert(`錯誤：${error.response.status}`);
       });
   }
+});
+
+clearAll.addEventListener('click', (e) => {
+  axios.delete(clearOrdersUrl, config)
+    .then((response) => {
+      adminData = response.data.orders;
+      init(adminData);
+    })
+    .catch((error) => {
+      alert(`錯誤：${error.response.status}`);
+    });
 });
