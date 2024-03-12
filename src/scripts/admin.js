@@ -47,6 +47,13 @@ const getTime = (timeStamp) => {
   return `${year}/${month}/${date}`;
 };
 
+const getPaidState = (paid) => {
+  if (paid) {
+    return '已處理';
+  }
+  return '未處理';
+};
+
 const getOrders = (data) => {
   let listStr = '';
   data.forEach((item) => {
@@ -61,7 +68,7 @@ const getOrders = (data) => {
     </td>
     <td class="back-table-style">${orderProduct(item.products)}</td>
     <td class="back-table-style"><time>${getTime(item.createdAt)}</time></td>
-    <td class="back-table-style"><a href="#" class="underline text-blue-state">未處理</a></td>
+    <td class="back-table-style"><a href="#" class="underline text-blue-state">${getPaidState(item.paid)}</a></td>
     <td class="back-table-style px-0 text-center">
       <button
         type="button"
