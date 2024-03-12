@@ -126,5 +126,15 @@ tbody.addEventListener('click', (e) => {
       .catch((error) => {
         alert(`錯誤：${error.response.status}`);
       });
+  } else if (e.target.nodeName === 'BUTTON') {
+    // click delete button for an order
+    axios.delete(`${baseUrl}/api/livejs/v1/admin/${apiPath}/orders/${orderItem.id}`, config)
+      .then((response) => {
+        adminData = response.data.orders;
+        init(adminData);
+      })
+      .catch((error) => {
+        alert(`錯誤：${error.response.status}`);
+      });
   }
 });
