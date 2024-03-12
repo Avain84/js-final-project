@@ -110,3 +110,10 @@ cartContent.addEventListener("click", (e) => {
     });
   }
 });
+deleteBtn.addEventListener("click", () => {
+  axios.delete(deleteUrl).then((res) => {
+    let cartInfo = getCartContent(res.data.carts);
+    render(cartContent, cartInfo);
+    totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
+  });
+});
