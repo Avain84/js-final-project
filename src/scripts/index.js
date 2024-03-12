@@ -4,14 +4,19 @@ const cartContent = document.querySelector(".cart-content");
 const totalCartPrice = document.querySelector(".total-price");
 const deleteBtn = document.querySelector(".delete-all");
 
-const productsUrl =
-  "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/products";
-const cartUrl =
-  "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/carts";
-const addCartUrl =
-  "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/carts";
-const deleteUrl =
-  "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/carts";
+const userName = document.querySelector(".user-name");
+const userPhone = document.querySelector(".user-phone");
+const userEmail = document.querySelector(".user-email");
+const userAddress = document.querySelector(".user-address");
+const userPayment = document.querySelector(".user-payment");
+const submitBtn = document.querySelector(".order-submit");
+
+const user = "levia";
+const productsUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/products`;
+const cartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
+const addCartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
+const deleteUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
+const orderUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/orders`;
 
 axios.get(productsUrl).then((res) => {
   let products = "";
@@ -70,6 +75,13 @@ function addCart(data) {
     console.log(res);
   });
 }
+function resetForm() {
+  userName.value = "";
+  userPhone.value = "";
+  userEmail.value = "";
+  userAddress.value = "";
+  userPayment.value = "";
+}
 
 productFilter.addEventListener("change", () => {
   const productCard = document.querySelectorAll(".product-card");
@@ -116,4 +128,31 @@ deleteBtn.addEventListener("click", () => {
     render(cartContent, cartInfo);
     totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
   });
+});
+submitBtn.addEventListener("click", () => {
+  let userData = {
+    data: {
+      user: {
+        name: userName.value,
+        tel: userPhone.value,
+        email: userEmail.value,
+        address: userAddress.value,
+        payment: userPayment.value,
+      },
+    },
+  };
+  axios
+    .post(orderUrl, userData)
+    .then((res) => {
+      alert("訂單已送出");
+      axios.get(cartUrl).then((res) => {
+        let cartInfo = getCartContent(res.data.carts);
+        totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
+        render(cartContent, cartInfo);
+        resetForm();
+      });
+    })
+    .catch((err) => {
+      alert(err.response.data.message);
+    });
 });
