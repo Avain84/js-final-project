@@ -100,3 +100,13 @@ productAlbum.addEventListener("click", (e) => {
     addCart(productData);
   }
 });
+cartContent.addEventListener("click", (e) => {
+  if (e.target.getAttribute("data-id")) {
+    let url = `${deleteUrl}/${e.target.getAttribute("data-id")}`;
+    axios.delete(url).then((res) => {
+      let cartInfo = getCartContent(res.data.carts);
+      render(cartContent, cartInfo);
+      totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
+    });
+  }
+});
