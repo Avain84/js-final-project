@@ -24,14 +24,19 @@ const token = 'QA0fGyIOUGPnOAvwT5Hl0DDRT763';
 const config = {
   headers: { authorization: token },
 };
+const getOrderUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
+const changePaidUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
 
 // DOM
 const admin = document.querySelector('.admin');
 const main = document.querySelector('main');
 const tbody = document.querySelector('tbody');
 
+// variable
+let adminData;
+
 // function
-const orderProduct = (products) => {
+const getOrderProduct = (products) => {
   let productsList = '';
   products.forEach((item) => {
     productsList += `${item.title}<br>`;
@@ -57,7 +62,7 @@ const getPaidState = (paid) => {
 const getOrders = (data) => {
   let listStr = '';
   data.forEach((item) => {
-    listStr += `<tr>
+    listStr += `<tr id="${item.id}">
     <td class="back-table-style">${item.createdAt}</td>
     <td class="back-table-style">${item.user.name}<br />${item.user.tel}</td>
     <td class="back-table-style">
@@ -66,7 +71,7 @@ const getOrders = (data) => {
     <td class="back-table-style">
       ${item.user.email}
     </td>
-    <td class="back-table-style">${orderProduct(item.products)}</td>
+    <td class="back-table-style">${getOrderProduct(item.products)}</td>
     <td class="back-table-style"><time>${getTime(item.createdAt)}</time></td>
     <td class="back-table-style"><a href="#" class="underline text-blue-state">${getPaidState(item.paid)}</a></td>
     <td class="back-table-style px-0 text-center">
@@ -87,13 +92,39 @@ const init = (data) => {
   getOrders(data);
 };
 
+// get orders API
 admin.addEventListener('click', (e) => {
+  e.preventDefault();
   axios
-    .get(`${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`, config)
+    .get(getOrderUrl, config)
     .then((response) => {
-      init(response.data.orders);
+      adminData = response.data.orders;
+      init(adminData);
     })
     .catch((error) => {
       alert(error.response.data.message);
     });
+});
+
+tbody.addEventListener('click', (e) => {
+  e.preventDefault();
+  const orderItem = e.target.closest('tr');
+  // change paid state API
+  if (e.target.nodeName === 'A') {
+    const clickItem = adminData.filter((item) => orderItem.id === item.id);
+    const postData = {
+      data: {
+        id: orderItem.id,
+        paid: !clickItem[0].paid,
+      },
+    };
+    axios.put(changePaidUrl, postData, config)
+      .then((response) => {
+        adminData = response.data.orders;
+        init(adminData);
+      })
+      .catch((error) => {
+        alert(`錯誤：${error.response.status}`);
+      });
+  }
 });
