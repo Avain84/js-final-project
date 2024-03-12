@@ -2,10 +2,15 @@ const productAlbum = document.querySelector(".product-album");
 const productFilter = document.querySelector(".product-filter");
 const cartContent = document.querySelector(".cart-content");
 const totalCartPrice = document.querySelector(".total-price");
+const deleteBtn = document.querySelector(".delete-all");
 
 const productsUrl =
   "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/products";
 const cartUrl =
+  "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/carts";
+const addCartUrl =
+  "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/carts";
+const deleteUrl =
   "https://livejs-api.hexschool.io/api/livejs/v1/customer/levia/carts";
 
 axios.get(productsUrl).then((res) => {
@@ -27,8 +32,17 @@ axios.get(productsUrl).then((res) => {
   render(productAlbum, products);
 });
 axios.get(cartUrl).then((res) => {
+  let cartInfo = getCartContent(res.data.carts);
+  totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
+  render(cartContent, cartInfo);
+});
+
+function render(area, str) {
+  area.innerHTML = str;
+}
+function getCartContent(data) {
   let cartInfo = "";
-  res.data.carts.forEach((obj) => {
+  data.forEach((obj) => {
     cartInfo += `<tr class="border-b border-gray-border">
     <td class="py-5 pr-[30px] flex gap-[15px] items-center">
       <div class="w-16 h-16 md:w-20 md:h-20 overflow-hidden flex-shrink-0">
@@ -46,14 +60,17 @@ axios.get(cartUrl).then((res) => {
     <td class="delete py-5 text-center" data-id="${obj.id}">X</td>
   </tr>`;
   });
-  totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
-  render(cartContent, cartInfo);
-  // console.log(cartInfo[0].product);
-});
-
-function render(area, str) {
-  area.innerHTML = str;
+  return cartInfo;
 }
+function addCart(data) {
+  axios.post(addCartUrl, data).then((res) => {
+    let cartInfo = getCartContent(res.data.carts);
+    render(cartContent, cartInfo);
+    totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
+    console.log(res);
+  });
+}
+
 productFilter.addEventListener("change", () => {
   const productCard = document.querySelectorAll(".product-card");
   console.log(productFilter.value);
@@ -70,5 +87,16 @@ productFilter.addEventListener("change", () => {
         el.classList.add("hidden");
       }
     });
+  }
+});
+productAlbum.addEventListener("click", (e) => {
+  if (e.target.getAttribute("data-id")) {
+    let productData = {
+      data: {
+        productId: e.target.getAttribute("data-id"),
+        quantity: 1,
+      },
+    };
+    addCart(productData);
   }
 });
