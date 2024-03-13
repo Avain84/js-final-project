@@ -1,39 +1,78 @@
 // 偽元素漢堡選單
-.line{
+.line {
   width: 60%;
   top: calc(50% - 2px);
   left: 20%;
-  &,&::before,&::after{
-    content :'';
+  &,
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
     height: 4px;
     border-radius: 2px;
     background-color: black;
-    transition : .5s linear;
+    transition: 0.5s linear;
   }
-  &::before{
+  &::before {
     width: 100%;
     top: -8px;
   }
-  &::after{
+  &::after {
     width: 100%;
     top: 8px;
   }
 }
-#mobile_nav:checked{
-  & + .label .line{
+#mobile_nav:checked {
+  & + .label .line {
     background-color: transparent;
-    &::before{
+    &::before {
       transform: rotate(-45deg);
       top: 0;
     }
-    &::after{
+    &::after {
       transform: rotate(45deg);
       top: 0;
     }
   }
 }
 
-#mobile_nav:checked ~.menu{
+#mobile_nav:checked ~ .menu{
   max-height : 300px;
+}
+
+.mobile-recommend {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  & > li {
+    scroll-snap-align: center;
+  }
+}
+
+.mobile-recommend::-webkit-scrollbar {
+  display: none;
+}
+
+.recommend-album::-webkit-scrollbar {
+  display: none;
+}
+
+/* width */
+.table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* Track */
+.table-scroll::-webkit-scrollbar-track {
+  background: #DACBFF;
+}
+
+/* Handle */
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #9D7FEA;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #5434A7;
 }
