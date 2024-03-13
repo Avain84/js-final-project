@@ -26,7 +26,7 @@
     @apply border-b border-gray-table-border;
   }
   .btn {
-    @apply border border-black bg-black text-white w-[255px] text-center py-[10px] text-[20px] hover:bg-white hover:text-black transition;
+    @apply bg-black text-white w-[255px] text-center py-[10px] text-[20px] hover:bg-purple-bg transition;
   }
   .badge {
     @apply absolute text-[20px] px-6 py-2 bg-black text-white right-[-4px] top-3;
