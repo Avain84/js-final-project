@@ -1,32 +1,13 @@
-const chart = c3.generate({
-  bindto: '#chart',
-  data: {
-    columns: [
-      ['Louvre 雙人床架', 10],
-      ['Antony 單人床架', 20],
-      ['Antony 雙人床架', 30],
-      ['其他', 40],
-    ],
-    type: 'pie',
-  },
-  color: {
-    pattern: ['#DACBFF', '#9D7FEA', '#5434A7', '#301E5F'],
-  },
-  padding: {
-    bottom: 32,
-  },
-});
-
+/* eslint-disable no-alert */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 // base setting
-const baseUrl = 'https://livejs-api.hexschool.io';
 const apiPath = 'avain';
 const token = 'QA0fGyIOUGPnOAvwT5Hl0DDRT763';
 const config = {
   headers: { authorization: token },
 };
-const getOrderUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
-const changePaidUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
-const clearOrdersUrl = `${baseUrl}/api/livejs/v1/admin/${apiPath}/orders`;
+const baseUrl = `https://livejs-api.hexschool.io/api/livejs/v1/admin/${apiPath}/orders`;
 
 // DOM
 const admin = document.querySelector('.admin');
@@ -38,6 +19,7 @@ const clearAll = document.querySelector('.self-end');
 let adminData;
 
 // function
+// 取得每筆訂單的商品名稱
 const getOrderProduct = (products) => {
   let productsList = '';
   products.forEach((item) => {
@@ -46,6 +28,7 @@ const getOrderProduct = (products) => {
   return productsList;
 };
 
+// 取得每筆訂單的時間
 const getTime = (timeStamp) => {
   const newDate = new Date(timeStamp * 1000);
   const year = newDate.getFullYear();
@@ -54,6 +37,7 @@ const getTime = (timeStamp) => {
   return `${year}/${month}/${date}`;
 };
 
+// 取得每筆訂單狀態
 const getPaidState = (paid) => {
   if (paid) {
     return '已處理';
@@ -61,6 +45,7 @@ const getPaidState = (paid) => {
   return '未處理';
 };
 
+// 取得所有訂單資料並渲染
 const getOrders = (data) => {
   let listStr = '';
   data.forEach((item) => {
@@ -89,16 +74,60 @@ const getOrders = (data) => {
   tbody.innerHTML = listStr;
 };
 
+// 圖表
+const chartInfo = (dataArr) => {
+  const chart = c3.generate({
+    bindto: '#chart',
+    data: {
+      columns: dataArr,
+      type: 'pie',
+    },
+    color: {
+      pattern: ['#DACBFF', '#9D7FEA', '#5434A7', '#301E5F'],
+    },
+    padding: {
+      bottom: 32,
+    },
+  });
+};
+
+// 圖表資料處理
+const showChart = (data) => {
+  // 取出每筆訂單的產品分類與數量
+  const ordersProducts = data.map((item) => {
+    const productsItemInfo = item.products.map((productsItem) => {
+      const obj = {
+        category: productsItem.category,
+        quantity: productsItem.quantity,
+      };
+      return obj;
+    });
+    return productsItemInfo;
+  });
+  const dataObj = {};
+  // 資料打平並統計同類產品數量
+  ordersProducts.flat().forEach((item) => {
+    if (dataObj[item.category] === undefined) {
+      dataObj[item.category] = item.quantity;
+    } else {
+      dataObj[item.category] += item.quantity;
+    }
+  });
+  // 將物件轉成陣列並傳給圖表
+  chartInfo(Object.entries(dataObj));
+};
+
 const init = (data) => {
   main.classList.remove('hidden');
   getOrders(data);
+  showChart(data);
 };
 
 // get orders API
 admin.addEventListener('click', (e) => {
   e.preventDefault();
   axios
-    .get(getOrderUrl, config)
+    .get(baseUrl, config)
     .then((response) => {
       adminData = response.data.orders;
       init(adminData);
@@ -120,7 +149,7 @@ tbody.addEventListener('click', (e) => {
         paid: !clickItem[0].paid,
       },
     };
-    axios.put(changePaidUrl, postData, config)
+    axios.put(baseUrl, postData, config)
       .then((response) => {
         adminData = response.data.orders;
         init(adminData);
@@ -129,8 +158,8 @@ tbody.addEventListener('click', (e) => {
         alert(`錯誤：${error.response.status}`);
       });
   } else if (e.target.nodeName === 'BUTTON') {
-    // click delete button for an order
-    axios.delete(`${baseUrl}/api/livejs/v1/admin/${apiPath}/orders/${orderItem.id}`, config)
+    // click delete button for one order
+    axios.delete(`${baseUrl}/${orderItem.id}`, config)
       .then((response) => {
         adminData = response.data.orders;
         init(adminData);
@@ -141,8 +170,9 @@ tbody.addEventListener('click', (e) => {
   }
 });
 
-clearAll.addEventListener('click', (e) => {
-  axios.delete(clearOrdersUrl, config)
+// delete all orders
+clearAll.addEventListener('click', () => {
+  axios.delete(baseUrl, config)
     .then((response) => {
       adminData = response.data.orders;
       init(adminData);
