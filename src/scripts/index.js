@@ -14,8 +14,6 @@ const submitBtn = document.querySelector(".order-submit");
 const user = "levia";
 const productsUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/products`;
 const cartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
-const addCartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
-const deleteUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
 const orderUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/orders`;
 
 axios.get(productsUrl).then((res) => {
@@ -60,15 +58,28 @@ function getCartContent(data) {
       <p class="cart-title">${obj.product.title}</p>
     </td>
     <td class="cart-unitprice py-5">${obj.product.price}</td>
-    <td class="cart-num py-5">${obj.quantity}</td>
+    <td class="cart-num py-5">
+      <select name="product-nums" class="bg-white-bg border border-gray-border rounded px-3 py-2" value="${String(
+        obj.quantity
+      )}" data-q-id="${obj.id}">
+      <option value="${obj.quantity}" selected>${obj.quantity}</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </td>
     <td class="cart-total-price py-5">${obj.product.price * obj.quantity}</td>
-    <td class="delete py-5 text-center" data-id="${obj.id}">X</td>
+    <td class="delete py-5 text-center"><i class="fa-solid fa-xmark"  data-id="${
+      obj.id
+    }"></i></td>
   </tr>`;
   });
   return cartInfo;
 }
 function addCart(data) {
-  axios.post(addCartUrl, data).then((res) => {
+  axios.post(cartUrl, data).then((res) => {
     let cartInfo = getCartContent(res.data.carts);
     render(cartContent, cartInfo);
     totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
@@ -114,7 +125,7 @@ productAlbum.addEventListener("click", (e) => {
 });
 cartContent.addEventListener("click", (e) => {
   if (e.target.getAttribute("data-id")) {
-    let url = `${deleteUrl}/${e.target.getAttribute("data-id")}`;
+    let url = `${cartUrl}/${e.target.getAttribute("data-id")}`;
     axios.delete(url).then((res) => {
       let cartInfo = getCartContent(res.data.carts);
       render(cartContent, cartInfo);
@@ -122,8 +133,22 @@ cartContent.addEventListener("click", (e) => {
     });
   }
 });
+cartContent.addEventListener("change", (e) => {
+  let changeObj = {
+    data: {
+      id: e.target.getAttribute("data-q-id"),
+      quantity: Number(e.target.value),
+    },
+  };
+  console.log(changeObj);
+  axios.patch(cartUrl, changeObj).then((res) => {
+    let cartInfo = getCartContent(res.data.carts);
+    render(cartContent, cartInfo);
+    totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
+  });
+});
 deleteBtn.addEventListener("click", () => {
-  axios.delete(deleteUrl).then((res) => {
+  axios.delete(cartUrl).then((res) => {
     let cartInfo = getCartContent(res.data.carts);
     render(cartContent, cartInfo);
     totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
