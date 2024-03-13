@@ -1,23 +1,23 @@
-const productAlbum = document.querySelector(".product-album");
-const productFilter = document.querySelector(".product-filter");
-const cartContent = document.querySelector(".cart-content");
-const totalCartPrice = document.querySelector(".total-price");
-const deleteBtn = document.querySelector(".delete-all");
+const productAlbum = document.querySelector('.product-album');
+const productFilter = document.querySelector('.product-filter');
+const cartContent = document.querySelector('.cart-content');
+const totalCartPrice = document.querySelector('.total-price');
+const deleteBtn = document.querySelector('.delete-all');
 
-const userName = document.querySelector(".user-name");
-const userPhone = document.querySelector(".user-phone");
-const userEmail = document.querySelector(".user-email");
-const userAddress = document.querySelector(".user-address");
-const userPayment = document.querySelector(".user-payment");
-const submitBtn = document.querySelector(".order-submit");
+const userName = document.querySelector('.user-name');
+const userPhone = document.querySelector('.user-phone');
+const userEmail = document.querySelector('.user-email');
+const userAddress = document.querySelector('.user-address');
+const userPayment = document.querySelector('.user-payment');
+const submitBtn = document.querySelector('.order-submit');
 
-const user = "avain";
+const user = 'avain';
 const productsUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/products`;
 const cartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
 const orderUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/orders`;
 
 axios.get(productsUrl).then((res) => {
-  let products = "";
+  let products = '';
   res.data.products.forEach((obj) => {
     products += `<li class="product-card w-[255px] relative" data-category="${obj.category}">
       <span class="badge">新品</span>
@@ -28,7 +28,7 @@ axios.get(productsUrl).then((res) => {
       />
       <button class="btn" data-id="${obj.id}">加入購物車</button>
       <h3 class="text-[20px] my-2">${obj.title}</h3>
-      <p class="text-[20px] line-through">NT$${obj["origin_price"]}</p>
+      <p class="text-[20px] line-through">NT$${obj['origin_price']}</p>
       <p class="text-[28px]">NT$${obj.price}</p>
     </li>`;
   });
@@ -44,7 +44,7 @@ function render(area, str) {
   area.innerHTML = str;
 }
 function getCartContent(data) {
-  let cartInfo = "";
+  let cartInfo = '';
   data.forEach((obj) => {
     cartInfo += `<tr class="border-b border-gray-border">
     <td class="py-5 pr-[30px] flex gap-[15px] items-center">
@@ -71,7 +71,7 @@ function getCartContent(data) {
       </select>
     </td>
     <td class="cart-total-price py-5">${obj.product.price * obj.quantity}</td>
-    <td class="delete py-5 text-center"><i class="fa-solid fa-xmark"  data-id="${
+    <td class="delete py-5 text-center"><i class="fa-solid fa-xmark cursor-pointer"  data-id="${
       obj.id
     }"></i></td>
   </tr>`;
@@ -87,45 +87,45 @@ function addCart(data) {
   });
 }
 function resetForm() {
-  userName.value = "";
-  userPhone.value = "";
-  userEmail.value = "";
-  userAddress.value = "";
-  userPayment.value = "";
+  userName.value = '';
+  userPhone.value = '';
+  userEmail.value = '';
+  userAddress.value = '';
+  userPayment.value = '';
 }
 
-productFilter.addEventListener("change", () => {
-  const productCard = document.querySelectorAll(".product-card");
+productFilter.addEventListener('change', () => {
+  const productCard = document.querySelectorAll('.product-card');
   console.log(productFilter.value);
-  if (productFilter.value == "all") {
+  if (productFilter.value == 'all') {
     productCard.forEach((el) => {
-      el.classList.remove("hidden");
+      el.classList.remove('hidden');
     });
   } else {
     productCard.forEach((el) => {
-      el.classList.remove("hidden");
+      el.classList.remove('hidden');
     });
     productCard.forEach((el) => {
-      if (el.getAttribute("data-category") != productFilter.value) {
-        el.classList.add("hidden");
+      if (el.getAttribute('data-category') != productFilter.value) {
+        el.classList.add('hidden');
       }
     });
   }
 });
-productAlbum.addEventListener("click", (e) => {
-  if (e.target.getAttribute("data-id")) {
+productAlbum.addEventListener('click', (e) => {
+  if (e.target.getAttribute('data-id')) {
     let productData = {
       data: {
-        productId: e.target.getAttribute("data-id"),
+        productId: e.target.getAttribute('data-id'),
         quantity: 1,
       },
     };
     addCart(productData);
   }
 });
-cartContent.addEventListener("click", (e) => {
-  if (e.target.getAttribute("data-id")) {
-    let url = `${cartUrl}/${e.target.getAttribute("data-id")}`;
+cartContent.addEventListener('click', (e) => {
+  if (e.target.getAttribute('data-id')) {
+    let url = `${cartUrl}/${e.target.getAttribute('data-id')}`;
     axios.delete(url).then((res) => {
       let cartInfo = getCartContent(res.data.carts);
       render(cartContent, cartInfo);
@@ -133,10 +133,10 @@ cartContent.addEventListener("click", (e) => {
     });
   }
 });
-cartContent.addEventListener("change", (e) => {
+cartContent.addEventListener('change', (e) => {
   let changeObj = {
     data: {
-      id: e.target.getAttribute("data-q-id"),
+      id: e.target.getAttribute('data-q-id'),
       quantity: Number(e.target.value),
     },
   };
@@ -147,14 +147,14 @@ cartContent.addEventListener("change", (e) => {
     totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
   });
 });
-deleteBtn.addEventListener("click", () => {
+deleteBtn.addEventListener('click', () => {
   axios.delete(cartUrl).then((res) => {
     let cartInfo = getCartContent(res.data.carts);
     render(cartContent, cartInfo);
     totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
   });
 });
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener('click', () => {
   let userData = {
     data: {
       user: {
@@ -169,7 +169,7 @@ submitBtn.addEventListener("click", () => {
   axios
     .post(orderUrl, userData)
     .then((res) => {
-      alert("訂單已送出");
+      alert('訂單已送出');
       axios.get(cartUrl).then((res) => {
         let cartInfo = getCartContent(res.data.carts);
         totalCartPrice.textContent = `NT$${res.data.finalTotal}`;
