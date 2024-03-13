@@ -11,7 +11,7 @@ const userAddress = document.querySelector(".user-address");
 const userPayment = document.querySelector(".user-payment");
 const submitBtn = document.querySelector(".order-submit");
 
-const user = "levia";
+const user = "avain";
 const productsUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/products`;
 const cartUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/carts`;
 const orderUrl = `https://livejs-api.hexschool.io/api/livejs/v1/customer/${user}/orders`;
@@ -59,9 +59,9 @@ function getCartContent(data) {
     </td>
     <td class="cart-unitprice py-5">${obj.product.price}</td>
     <td class="cart-num py-5">
-      <select name="product-nums" class="bg-white-bg border border-gray-border rounded px-3 py-2" value="${String(
-        obj.quantity
-      )}" data-q-id="${obj.id}">
+      <select name="product-nums" class="bg-white-bg border border-gray-border rounded px-3 py-2" data-q-id="${
+        obj.id
+      }">
       <option value="${obj.quantity}" selected>${obj.quantity}</option>
         <option value="1">1</option>
         <option value="2">2</option>
